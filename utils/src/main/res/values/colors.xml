@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text -->
+    <color name="utilsTextB">#656565</color>
+    <color name="utilsTextLB">#90656565</color>
+    <color name="utilsTextW">#DEFFFFFF</color>
+    <color name="utilsTextLW">#A5FFFFFF</color>
+
+    <!-- Divider -->
+    <color name="utilsDividerB">#A0A0A0</color>
+    <color name="utilsDividerW">#F9F9F9</color>
+    <color name="utilsDividerLB">#E0E0E0</color>
+    <color name="utilsDividerLW">#D5D5D5</color>
+
+    <!-- Click -->
+    <color name="utilsRipple">#D4D4D4</color>
+    <color name="utilsPressed">#09000000</color>
+    <color name="utilsPressedW">#35FFFFFF</color>
+
+    <!-- Background -->
+    <color name="utilsDialogBgW">#F5F5F5</color>
+    <color name="utilsBgW">#FBFBFB</color>
+    <color name="utilsBgLoadingDialog">#90000000</color>
+
+</resources>

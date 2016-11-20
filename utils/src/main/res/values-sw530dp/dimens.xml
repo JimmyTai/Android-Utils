@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="utilsAppBar">55dp</dimen>
+    <dimen name="utilsAppBarShadow">2.5dp</dimen>
+    <dimen name="utilsTextMargin">20dp</dimen>
+    <dimen name="utilsTextTitle">19sp</dimen>
+    <dimen name="utilsTextContent">17sp</dimen>
+</resources>

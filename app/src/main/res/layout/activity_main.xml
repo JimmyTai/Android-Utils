@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jimmytai.library.utils_demo.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_ll_appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/utilsAppBar"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/utilsTextMargin"
+                android:layout_marginStart="@dimen/utilsTextMargin"
+                android:text="工具"
+                android:textColor="@color/utilsTextW"
+                android:textSize="@dimen/utilsTextTitle"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/utilsAppBarShadow"
+            android:background="@drawable/utils_shadow_app_bar"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_ll_appBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/utilsTextMargin"
+            android:layout_marginStart="@dimen/utilsTextMargin"
+            android:layout_marginTop="@dimen/utilsTextMargin"
+            android:text="測試字體大小呦"
+            android:textColor="@color/utilsTextB"
+            android:textSize="@dimen/utilsTextContent"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
