@@ -1,8 +1,8 @@
 package com.jimmytai.library.utils.fragment;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +20,7 @@ import java.util.List;
  * It provides a lifecycle listener to watch the lifecycle of Fragment.
  */
 
-public abstract class JFragment extends Fragment {
+public abstract class JSupportFragment extends Fragment {
 
     public View jView;
     public JLifecycle jLifeCycle = JLifecycle.NOT_INITIAL;

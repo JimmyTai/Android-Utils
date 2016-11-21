@@ -1,10 +1,12 @@
 package com.jimmytai.library.utils.fragment;
 
+import android.app.Activity;
 import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +44,12 @@ public abstract class JDialogFragment extends DialogFragment {
     public abstract String setTag();
 
     public abstract boolean setDebug();
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        JLog.i(setDebug(), setTag(), "onAttach()");
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -124,5 +132,11 @@ public abstract class JDialogFragment extends DialogFragment {
         this.jLifeCycle = JLifecycle.ON_DESTROY;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_DESTROY);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        JLog.i(setDebug(), setTag(), "onDetach()");
     }
 }

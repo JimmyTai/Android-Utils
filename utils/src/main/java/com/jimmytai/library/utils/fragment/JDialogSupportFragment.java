@@ -1,8 +1,11 @@
 package com.jimmytai.library.utils.fragment;
 
-import android.app.Fragment;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +19,12 @@ import java.util.List;
 /**
  * Created by JimmyTai on 2016/11/18.
  * <p>
- * This JActivity class is extends from Support Fragment.
- * It provides a lifecycle listener to watch the lifecycle of Fragment.
+ * This JActivity class is extends from Support DialogFragment.
+ * It provides a lifecycle listener to watch the lifecycle of DialogFragment.
  */
 
-public abstract class JFragment extends Fragment {
+public abstract class JDialogSupportFragment extends DialogFragment {
 
-    public View jView;
     public JLifecycle jLifeCycle = JLifecycle.NOT_INITIAL;
     private List<JLifecycle.LifecycleListener> lifeCycleListenerList = new ArrayList<>();
 
@@ -42,96 +44,104 @@ public abstract class JFragment extends Fragment {
 
     public abstract boolean setDebug();
 
-    public abstract int setLayout();
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        JLog.i(setDebug(), setTag(), "onAttach()");
         this.jLifeCycle = JLifecycle.ON_ATTACH;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_ATTACH);
-        JLog.i(setDebug(), setTag(), "onAttach()");
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        JLog.i(setDebug(), setTag(), "onCreate()");
         this.jLifeCycle = JLifecycle.ON_CREATE;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_CREATE);
-        JLog.i(setDebug(), setTag(), "onCreate()");
     }
 
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        JLog.i(setDebug(), setTag(), "onCreateDialog()");
+        this.jLifeCycle = JLifecycle.ON_CREATE_DIALOG;
+        for (int i = 0; i < lifeCycleListenerList.size(); i++)
+            lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_CREATE_DIALOG);
+        return super.onCreateDialog(savedInstanceState);
+    }
+
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        JLog.i(setDebug(), setTag(), "onCreateView()");
         this.jLifeCycle = JLifecycle.ON_CREATE_VIEW;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_CREATE_VIEW);
-        JLog.i(setDebug(), setTag(), "onCreateView()");
-        jView = inflater.inflate(setLayout(), container, false);
-        return jView;
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        JLog.i(setDebug(), setTag(), "onStart()");
         this.jLifeCycle = JLifecycle.ON_START;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_START);
-        JLog.i(setDebug(), setTag(), "onStart()");
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        JLog.i(setDebug(), setTag(), "onResume()");
         this.jLifeCycle = JLifecycle.ON_RESUME;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_RESUME);
-        JLog.i(setDebug(), setTag(), "onResume()");
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        JLog.i(setDebug(), setTag(), "onPause()");
         this.jLifeCycle = JLifecycle.ON_PAUSE;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_PAUSE);
-        JLog.i(setDebug(), setTag(), "onPause()");
     }
 
     @Override
     public void onStop() {
         super.onStop();
+        JLog.i(setDebug(), setTag(), "onStop()");
         this.jLifeCycle = JLifecycle.ON_STOP;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_STOP);
-        JLog.i(setDebug(), setTag(), "onStop()");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        JLog.i(setDebug(), setTag(), "onDestroyView()");
         this.jLifeCycle = JLifecycle.ON_DESTROY_VIEW;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_DESTROY_VIEW);
-        JLog.i(setDebug(), setTag(), "onDestroyView()");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        JLog.i(setDebug(), setTag(), "onDestroy()");
         this.jLifeCycle = JLifecycle.ON_DESTROY;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_DESTROY);
-        JLog.i(setDebug(), setTag(), "onDestroy()");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
+        JLog.i(setDebug(), setTag(), "onDetach()");
         this.jLifeCycle = JLifecycle.ON_DETACH;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_DETACH);
-        JLog.i(setDebug(), setTag(), "onDetach()");
     }
 }
