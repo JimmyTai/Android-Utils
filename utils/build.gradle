@@ -1,10 +1,18 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.JimmyTai'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'jimmytai'      //bintray注册的用户名
+    groupId = 'com.jimmytai.library'         //compile引用时的第1部分groupId
+    artifactId = 'android-utils'     //compile引用时的第2部分项目名
+    publishVersion = '1.0.0'    //compile引用时的第3部分版本号
+}
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         minSdkVersion 14
@@ -28,7 +36,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-fragment:25.0.1'
 }
 
 // 指定编码

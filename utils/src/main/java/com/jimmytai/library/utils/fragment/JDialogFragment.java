@@ -1,12 +1,9 @@
 package com.jimmytai.library.utils.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +57,6 @@ public abstract class JDialogFragment extends DialogFragment {
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_CREATE);
     }
 
-    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         JLog.i(setDebug(), setTag(), "onCreateDialog()");
@@ -70,7 +66,6 @@ public abstract class JDialogFragment extends DialogFragment {
         return super.onCreateDialog(savedInstanceState);
     }
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         JLog.i(setDebug(), setTag(), "onCreateView()");

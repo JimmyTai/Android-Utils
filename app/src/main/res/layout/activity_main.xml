@@ -6,6 +6,60 @@
     android:layout_height="match_parent"
     tools:context="com.jimmytai.library.utils_demo.MainActivity">
 
+    <RelativeLayout
+        android:id="@+id/main_rl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_ll_appBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/utilsTextMargin"
+            android:layout_marginStart="@dimen/utilsTextMargin"
+            android:layout_marginTop="@dimen/utilsTextMargin"
+            android:text="測試字體大小呦"
+            android:textColor="@color/utilsTextB"
+            android:textSize="@dimen/utilsTextContent"/>
+
+        <RelativeLayout android:id="@+id/main_rl_expandCollapse" android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorPrimary">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="60dp">
+
+                <TextView android:id="@+id/main_tv_expand"
+                          android:layout_width="0dp" android:layout_height="match_parent"
+                          android:layout_weight="1"
+                          android:clickable="true"
+                          android:gravity="center"
+                          android:text="Expand"
+                          android:textColor="@color/utilsTextW"
+                          android:textSize="14sp"/>
+
+                <View android:layout_width="1dp" android:layout_height="match_parent"
+                      android:background="@color/utilsDividerLW"/>
+
+                <TextView android:id="@+id/main_tv_collapse"
+                          android:layout_width="0dp" android:layout_height="match_parent"
+                          android:layout_weight="1"
+                          android:clickable="true"
+                          android:gravity="center"
+                          android:text="Collapse"
+                          android:textColor="@color/utilsTextW"
+                          android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                  android:layout_marginTop="60dp"
+                  android:background="@color/utilsDividerLW"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/main_ll_appBar"
         android:layout_width="match_parent"
@@ -34,22 +88,5 @@
             android:layout_height="@dimen/utilsAppBarShadow"
             android:background="@drawable/utils_shadow_app_bar"/>
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/main_ll_appBar">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/utilsTextMargin"
-            android:layout_marginStart="@dimen/utilsTextMargin"
-            android:layout_marginTop="@dimen/utilsTextMargin"
-            android:text="測試字體大小呦"
-            android:textColor="@color/utilsTextB"
-            android:textSize="@dimen/utilsTextContent"/>
-
-    </RelativeLayout>
 
 </RelativeLayout>

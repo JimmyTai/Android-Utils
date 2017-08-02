@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.content.ContextCompat;
 
 /**
  * Created by JimmyTai on 2016/11/19.
@@ -15,12 +14,15 @@ import android.support.v4.content.ContextCompat;
 public class JResUtils {
 
     public static int getColor(Context context, int id) {
-        return ContextCompat.getColor(context, id);
+        if (Build.VERSION.SDK_INT < 23)
+            return context.getResources().getColor(id);
+        else
+            return context.getColor(id);
     }
 
     public static int getColor(Context context, int id, Resources.Theme style) {
         if (Build.VERSION.SDK_INT < 23)
-            return ContextCompat.getColor(context, id);
+            return context.getResources().getColor(id);
         else
             return context.getResources().getColor(id, style);
     }
@@ -30,12 +32,15 @@ public class JResUtils {
     }
 
     public static Drawable getDrawable(Context context, int id) {
-        return ContextCompat.getDrawable(context, id);
+        if (Build.VERSION.SDK_INT < 23)
+            return context.getResources().getDrawable(id);
+        else
+            return context.getDrawable(id);
     }
 
     public static Drawable getDrawable(Context context, int id, Resources.Theme style) {
         if (Build.VERSION.SDK_INT < 23)
-            return ContextCompat.getDrawable(context, id);
+            return context.getResources().getDrawable(id);
         else
             return context.getResources().getDrawable(id, style);
     }

@@ -9,8 +9,8 @@
     <!-- Divider -->
     <color name="utilsDividerB">#A0A0A0</color>
     <color name="utilsDividerW">#F9F9F9</color>
-    <color name="utilsDividerLB">#E0E0E0</color>
-    <color name="utilsDividerLW">#D5D5D5</color>
+    <color name="utilsDividerLB">#60A0A0A0</color>
+    <color name="utilsDividerLW">#60F9F9F9</color>
 
     <!-- Click -->
     <color name="utilsRipple">#D4D4D4</color>
