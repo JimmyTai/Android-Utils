@@ -1,4 +1,4 @@
-package com.jimmytai.library.utils.view;
+package com.jimmytai.library.utils.custom_view;
 
 import android.content.Context;
 import android.view.View;

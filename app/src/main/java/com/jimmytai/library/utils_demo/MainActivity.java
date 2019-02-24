@@ -1,5 +1,6 @@
 package com.jimmytai.library.utils_demo;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -7,7 +8,8 @@ import android.widget.TextView;
 
 import com.jimmytai.library.utils.JResUtils;
 import com.jimmytai.library.utils.activity.JActivity;
-import com.jimmytai.library.utils.view.ViewExpandCollapse;
+import com.jimmytai.library.utils.custom_view.ViewExpandCollapse;
+import com.jimmytai.library.utils.dialog.JLoadingDialog;
 
 public class MainActivity extends JActivity {
 
@@ -33,6 +35,8 @@ public class MainActivity extends JActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         findViews();
+        JLoadingDialog dialog = JLoadingDialog.newInstance(JResUtils.getColor(this, R.color.colorPrimary), true);
+        dialog.show(getFragmentManager(), JLoadingDialog.class.getSimpleName());
     }
 
     @Override

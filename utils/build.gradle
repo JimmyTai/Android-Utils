@@ -7,18 +7,18 @@ publish {
     userOrg = 'jimmytai'      //bintray注册的用户名
     groupId = 'com.jimmytai.library'         //compile引用时的第1部分groupId
     artifactId = 'android-utils'     //compile引用时的第2部分项目名
-    publishVersion = '1.0.0'    //compile引用时的第3部分版本号
+    publishVersion = '2.2.0'    //compile引用时的第3部分版本号
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
-        versionCode 2
-        versionName "1.0.1"
+        targetSdkVersion 26
+        versionCode 11
+        versionName "2.2.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -50,7 +50,7 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
-    failOnError  false
+    failOnError false
     source = android.sourceSets.main.java.sourceFiles
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     classpath += configurations.compile

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RippleView">
+        <attr name="rippleColor" format="color"/>
+        <attr name="initRadius" format="dimension"/>
+        <attr name="duration" format="integer"/>
+        <attr name="maxRadius" format="dimension"/>
+        <attr name="speed" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="HoloCircularProgressBar">
+        <attr name="stroke_width" format="dimension"/>
+        <attr name="progress" format="float"/>
+        <attr name="marker_progress" format="float"/>
+        <attr name="progress_color" format="color"/>
+        <attr name="progress_background_color" format="color"/>
+        <attr name="thumb_visible" format="boolean"/>
+        <attr name="marker_visible" format="boolean"/>
+        <attr name="android:gravity"/>
+    </declare-styleable>
+
+    <attr name="circularProgressBarStyle" format="reference"/>
+
+    <!--  Material design Widget -->
+
+    <declare-styleable name="ThemableView">
+        <attr name="v_styleId" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgressDrawable">
+        <attr name="cpd_padding" format="reference|dimension"/>
+        <attr name="cpd_initialAngle" format="reference|integer"/>
+        <attr name="cpd_maxSweepAngle" format="reference|integer"/>
+        <attr name="cpd_minSweepAngle" format="reference|integer"/>
+        <attr name="cpd_strokeSize" format="reference|dimension"/>
+        <attr name="cpd_strokeColor" format="reference|color"/>
+        <attr name="cpd_strokeSecondaryColor" format="reference|color"/>
+        <attr name="cpd_strokeColors" format="reference"/>
+        <attr name="cpd_reverse" format="boolean"/>
+        <attr name="cpd_rotateDuration" format="reference|integer"/>
+        <attr name="cpd_transformDuration" format="reference|integer"/>
+        <attr name="cpd_keepDuration" format="reference|integer"/>
+        <attr name="cpd_transformInterpolator" format="reference"/>
+        <attr name="cpd_inAnimDuration" format="reference|integer"/>
+        <attr name="cpd_outAnimDuration" format="reference|integer"/>
+        <attr name="cpd_inStepColors" format="reference"/>
+        <attr name="cpd_inStepPercent" format="float"/>
+        <attr name="pv_progressMode"/>
+        <attr name="pv_progress"/>
+        <attr name="pv_secondaryProgress"/>
+    </declare-styleable>
+
+    <declare-styleable name="LinearProgressDrawable">
+        <attr name="lpd_maxLineWidth" format="reference|dimension|fraction"/>
+        <attr name="lpd_minLineWidth" format="reference|dimension|fraction"/>
+        <attr name="lpd_strokeSize" format="reference|dimension"/>
+        <attr name="lpd_strokeColor" format="reference|color"/>
+        <attr name="lpd_strokeSecondaryColor" format="reference|color"/>
+        <attr name="lpd_strokeColors" format="reference"/>
+        <attr name="lpd_reverse" format="boolean"/>
+        <attr name="lpd_travelDuration" format="reference|integer"/>
+        <attr name="lpd_transformDuration" format="reference|integer"/>
+        <attr name="lpd_keepDuration" format="reference|integer"/>
+        <attr name="lpd_transformInterpolator" format="reference"/>
+        <attr name="lpd_inAnimDuration" format="reference|integer"/>
+        <attr name="lpd_outAnimDuration" format="reference|integer"/>
+        <attr name="lpd_verticalAlign" format="integer">
+            <enum name="top" value="0x00000000"/>
+            <enum name="center" value="0x00000001"/>
+            <enum name="bottom" value="0x00000002"/>
+        </attr>
+        <attr name="pv_progressMode"/>
+        <attr name="pv_progress"/>
+        <attr name="pv_secondaryProgress"/>
+    </declare-styleable>
+
+    <attr name="pv_progressMode" format="integer">
+        <enum name="determinate" value="0x00000000"/>
+        <enum name="indeterminate" value="0x00000001"/>
+        <enum name="buffer" value="0x00000002"/>
+        <enum name="query" value="0x00000003"/>
+    </attr>
+
+    <attr name="pv_progress" format="float"/>
+    <attr name="pv_secondaryProgress" format="float"/>
+
+    <declare-styleable name="ProgressView">
+        <attr name="pv_autostart" format="boolean"/>
+        <attr name="pv_circular" format="boolean"/>
+        <attr name="pv_progressStyle" format="reference"/>
+        <attr name="pv_progressMode"/>
+        <attr name="pv_progress"/>
+        <attr name="pv_secondaryProgress"/>
+    </declare-styleable>
+</resources>

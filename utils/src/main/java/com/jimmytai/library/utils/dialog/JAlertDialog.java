@@ -1,13 +1,18 @@
-package com.jimmytai.library.utils.fragment;
+package com.jimmytai.library.utils.dialog;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
+import com.jimmytai.library.utils.R;
 import com.jimmytai.library.utils.lifecycle.JLifecycle;
 import com.jimmytai.library.utils.log.JLog;
 
@@ -21,7 +26,7 @@ import java.util.List;
  * It provides a lifecycle listener to watch the lifecycle of DialogFragment.
  */
 
-public abstract class JDialogFragment extends DialogFragment {
+public abstract class JAlertDialog extends DialogFragment {
 
     public JLifecycle jLifeCycle = JLifecycle.NOT_INITIAL;
     private List<JLifecycle.LifecycleListener> lifeCycleListenerList = new ArrayList<>();
@@ -42,6 +47,18 @@ public abstract class JDialogFragment extends DialogFragment {
 
     public abstract boolean setDebug();
 
+    public abstract int setLayout();
+
+    public interface OnDismissListener {
+        void onDismiss(DialogInterface dialog);
+    }
+
+    private JDialog.OnDismissListener onDismissListener;
+
+    public void setOnDismissListener(JDialog.OnDismissListener listener) {
+        this.onDismissListener = listener;
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -57,13 +74,32 @@ public abstract class JDialogFragment extends DialogFragment {
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_CREATE);
     }
 
+    public Dialog jDialog;
+    public View jView;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         JLog.i(setDebug(), setTag(), "onCreateDialog()");
         this.jLifeCycle = JLifecycle.ON_CREATE_DIALOG;
         for (int i = 0; i < lifeCycleListenerList.size(); i++)
             lifeCycleListenerList.get(i).onLifecycleChanged(JLifecycle.ON_CREATE_DIALOG);
+        jDialog = new Dialog(getActivity(), R.style.JAlertDialog);
+        jView = LayoutInflater.from(getActivity()).inflate(setLayout(), null, false);
+        jDialog.setContentView(jView);
+        setWindows(jDialog);
         return super.onCreateDialog(savedInstanceState);
+    }
+
+    private void setWindows(Dialog dialog) {
+        Window window = dialog.getWindow();
+        if (window == null)
+            return;
+        window.setGravity(Gravity.BOTTOM);
+        window.getDecorView().setPadding(0, 0, 0, 0);
+        WindowManager.LayoutParams lp = window.getAttributes();
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(lp);
     }
 
     @Override
@@ -133,5 +169,12 @@ public abstract class JDialogFragment extends DialogFragment {
     public void onDetach() {
         super.onDetach();
         JLog.i(setDebug(), setTag(), "onDetach()");
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        if (onDismissListener != null)
+            onDismissListener.onDismiss(dialog);
     }
 }

@@ -4,4 +4,145 @@
     <style name="JActivity" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
+    <style name="JAlertDialog" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/alertDialogAnimation</item>
+    </style>
+
+    <style name="alertDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/utils_alertdialog_enter_bottom</item>
+        <item name="android:windowExitAnimation">@anim/utils_alertdialog_exit_bottom</item>
+    </style>
+
+    <style name="JDialog" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Widget -->
+    <style name="loadingDialogProgressBarStyle">
+        <item name="cpd_padding">0dp</item>
+        <item name="cpd_initialAngle">0</item>
+        <item name="cpd_maxSweepAngle">270</item>
+        <item name="cpd_minSweepAngle">1</item>
+        <item name="cpd_strokeSize">2dp</item>
+        <item name="cpd_strokeColor">@android:color/white</item>
+        <item name="cpd_strokeSecondaryColor">@android:color/transparent</item>
+        <item name="cpd_reverse">false</item>
+        <item name="cpd_rotateDuration">1000</item>
+        <item name="cpd_transformDuration">600</item>
+        <item name="cpd_keepDuration">200</item>
+        <item name="cpd_transformInterpolator">@android:anim/decelerate_interpolator</item>
+        <item name="pv_progressMode">indeterminate</item>
+        <item name="cpd_inAnimDuration">0</item>
+        <item name="cpd_outAnimDuration">@android:integer/config_mediumAnimTime</item>
+    </style>
+
+    <!-- Material design Widget -->
+
+    <style name="Material"></style>
+
+    <style name="Material.Drawable"></style>
+
+    <style name="Material.Widget"></style>
+
+    <style name="Material.Drawable.CircularProgress">
+        <item name="cpd_padding">0dp</item>
+        <item name="cpd_initialAngle">0</item>
+        <item name="cpd_maxSweepAngle">270</item>
+        <item name="cpd_minSweepAngle">1</item>
+        <item name="cpd_strokeSize">4dp</item>
+        <item name="cpd_strokeColor">@android:color/white</item>
+        <item name="cpd_strokeSecondaryColor">@android:color/transparent</item>
+        <item name="cpd_reverse">false</item>
+        <item name="cpd_rotateDuration">1000</item>
+        <item name="cpd_transformDuration">600</item>
+        <item name="cpd_keepDuration">200</item>
+        <item name="cpd_transformInterpolator">@android:anim/decelerate_interpolator</item>
+        <item name="pv_progressMode">indeterminate</item>
+        <item name="cpd_inAnimDuration">0</item>
+        <item name="cpd_outAnimDuration">@android:integer/config_mediumAnimTime</item>
+    </style>
+
+    <style name="Material.Drawable.CircularProgress.Determinate" parent="Material.Drawable.CircularProgress">
+        <item name="pv_progressMode">determinate</item>
+        <item name="cpd_inAnimDuration">@android:integer/config_mediumAnimTime</item>
+    </style>
+
+    <style name="Material.Drawable.LinearProgress">
+        <item name="lpd_maxLineWidth">75%</item>
+        <item name="lpd_minLineWidth">10%</item>
+        <item name="lpd_strokeSize">4dp</item>
+        <item name="lpd_strokeColor">@android:color/white</item>
+        <item name="lpd_strokeSecondaryColor">@android:color/white</item>
+        <item name="lpd_reverse">false</item>
+        <item name="lpd_travelDuration">1000</item>
+        <item name="lpd_transformDuration">600</item>
+        <item name="lpd_keepDuration">200</item>
+        <item name="lpd_transformInterpolator">@android:anim/decelerate_interpolator</item>
+        <item name="pv_progressMode">indeterminate</item>
+        <item name="lpd_inAnimDuration">@android:integer/config_mediumAnimTime</item>
+        <item name="lpd_outAnimDuration">@android:integer/config_mediumAnimTime</item>
+        <item name="lpd_verticalAlign">bottom</item>
+    </style>
+
+    <style name="Material.Drawable.LinearProgress.Determinate" parent="Material.Drawable.LinearProgress">
+        <item name="pv_progressMode">determinate</item>
+    </style>
+
+    <style name="Material.Drawable.LinearProgress.Query" parent="Material.Drawable.LinearProgress">
+        <item name="pv_progressMode">query</item>
+    </style>
+
+    <style name="Material.Drawable.LinearProgress.Buffer" parent="Material.Drawable.LinearProgress">
+        <item name="pv_progressMode">buffer</item>
+    </style>
+
+    <style name="Material.Widget.ProgressView">
+        <item name="pv_progress">0</item>
+    </style>
+
+    <style name="Material.Widget.ProgressView.Circular" parent="Material.Widget.ProgressView">
+        <item name="pv_autostart">true</item>
+        <item name="pv_circular">true</item>
+        <item name="pv_progressStyle">@style/Material.Drawable.CircularProgress</item>
+        <item name="pv_progressMode">indeterminate</item>
+    </style>
+
+    <style name="Material.Widget.ProgressView.Circular.Determinate" parent="Material.Widget.ProgressView.Circular">
+        <item name="pv_progressStyle">@style/Material.Drawable.CircularProgress.Determinate</item>
+        <item name="pv_progressMode">determinate</item>
+    </style>
+
+    <style name="Material.Widget.ProgressView.Linear" parent="Material.Widget.ProgressView">
+        <item name="pv_autostart">true</item>
+        <item name="pv_circular">false</item>
+        <item name="pv_progressStyle">@style/Material.Drawable.LinearProgress</item>
+        <item name="pv_progressMode">indeterminate</item>
+    </style>
+
+    <style name="Material.Widget.ProgressView.Linear.Determinate" parent="Material.Widget.ProgressView.Linear">
+        <item name="pv_progressStyle">@style/Material.Drawable.LinearProgress.Determinate</item>
+        <item name="pv_progressMode">determinate</item>
+    </style>
+
+    <style name="Material.Widget.ProgressView.Linear.Query" parent="Material.Widget.ProgressView.Linear">
+        <item name="pv_progressStyle">@style/Material.Drawable.LinearProgress.Query</item>
+        <item name="pv_progressMode">query</item>
+    </style>
+
+    <style name="Material.Widget.ProgressView.Linear.Buffer" parent="Material.Widget.ProgressView.Linear">
+        <item name="pv_progressStyle">@style/Material.Drawable.LinearProgress.Buffer</item>
+        <item name="pv_progressMode">buffer</item>
+    </style>
 </resources>

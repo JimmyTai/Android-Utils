@@ -7,9 +7,9 @@
     <color name="utilsTextLW">#A5FFFFFF</color>
 
     <!-- Divider -->
-    <color name="utilsDividerB">#A0A0A0</color>
+    <color name="utilsDividerB">#60000000</color>
     <color name="utilsDividerW">#F9F9F9</color>
-    <color name="utilsDividerLB">#60A0A0A0</color>
+    <color name="utilsDividerLB">#25000000</color>
     <color name="utilsDividerLW">#60F9F9F9</color>
 
     <!-- Click -->
